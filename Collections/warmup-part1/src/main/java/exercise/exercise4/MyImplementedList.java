@@ -58,19 +58,44 @@ public class MyImplementedList<E> {
     //TODO a) implement the empty constructor for the your data structure
     public MyImplementedList() {
         //TODO a) HINT - DEFAULT_CAPACITY, capacityAfterExtending and elementData properties
+        this.size = 0;
+        this.elementData = new Object[DEFAULT_CAPACITY];
+        this.capacityAfterExtending = DEFAULT_CAPACITY;
     }
 
     //TODO b) create the int size() method that returns the size of the data structure
+    public int size(){
+        return this.size;
+
+    }
 
     //TODO c) create the boolean add(E e) method that adds at the end of the data structure an element
     //TODO pay attention to the LOAD_FACTOR of the data structure
 
     //TODO d) create the boolean isEmpty() method that checks if the data structure have elements
 
+    public boolean isEmpty(){
+        if (this.size() == 0)
+            return 0;
+        else
+            return 1;
+    }
+
     //TODO e) create the boolean contains(Object o_O) method that checks if the data structure contains the object o_O
+
+    public boolean contains(Object o_O){
+        if(this.equals(o_O))
+            return 1;
+        else 
+            return 0;
+    }
 
     //TODO f) create the int indexOf(Object o_O) method that returns the position in the data structure of the object o_O
     //TODO if exists, otherwise return -1
+
+    public int indexOf(Object o_O){
+
+    }
 
     //TODO g) create the int lastIndexOf(Object o_O) method that returns the last position in the data structure of the object o_O
     //TODO if exists, otherwise return -1

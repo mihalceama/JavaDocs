@@ -46,7 +46,6 @@ public class MyList<Integer> extends ArrayList<Integer> {
 
     // TODO Exercise #2 a) Override add() and addAll() methods so that the list should retain the number of
     // TODO Exercise #2 a) different elements (Hint: check out the methods signatures on the List documentation)
-
     // TODO Exercise #2 b) Override the remove methods so that the number of different elements is updated when
     // TODO Exercise #2 b) an element is removed
     // TODO Exercise #2 b) hint: you need to update the number of different elements only when
