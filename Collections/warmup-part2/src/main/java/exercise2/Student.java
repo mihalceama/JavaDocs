@@ -35,7 +35,8 @@ public class Student {
     // TODO Exercise 2 a) Override the toString() method
     @Override
     public String toString() {
-        return "";
+
+        return this.firstName + " " + this.lastName;
     }
 
     // TODO Exercise 2 c) Override the equals() method
