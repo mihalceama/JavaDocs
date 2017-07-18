@@ -15,32 +15,20 @@ import java.io.RandomAccessFile;
 import java.util.Date;
 
 public class LogFileWriter {
-    public static final String TOMCAT_PATH=System.getenv("CATALINA_HOME").replace(";","");
+    public static final String TOMCAT_PATH=System.getenv("M2_HOME").replace(";","");
 
     /**
-     * This method log headers to %CATALINA_HOME%\logs\header.log
+     * This method log headers to %M2_HOME%\logs\headers.log
      * @param headerName - Header name
      * @param headerValue - Header value
      */
     public static void logHeader(String headerName,String headerValue){
 
-        try {
-            RandomAccessFile randomAccessFile=new RandomAccessFile(TOMCAT_PATH+ File.separator+"logs"+File.separator+"header.log","rw");
-            StringBuilder sb=new StringBuilder();
-            String ln;
-            while((ln=randomAccessFile.readLine())!=null){
-//                sb.append(ln).append("\r\n");
-            }
-            sb.append(new Date()).append(":").append(headerName).append(":").append(headerValue).append("\r\n");
-            randomAccessFile.writeBytes(sb.toString());
+        try(RandomAccessFile randomAccessFile=new RandomAccessFile(TOMCAT_PATH+ File.separator+"logs"+File.separator+"headers.log","rw")) {
+            randomAccessFile.writeBytes(String.valueOf(new Date()) + ":" + headerName + ":" + headerValue + "\r\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        logHeader("un_header","valoare header");
-    }
-
 
 }
