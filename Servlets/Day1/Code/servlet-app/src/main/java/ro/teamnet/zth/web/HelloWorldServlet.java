@@ -36,12 +36,12 @@ public class HelloWorldServlet extends HttpServlet {
         response.setContentType("text/html");
 
         // TODO Obtain the username from the request instance
-
+        user = request.getParameter("user");
 
         // TODO Write the response content to the PrintWriter instance of the response instance
         // TIP: use write() method
         // TIP: you can also use html tags to markup your text
-
+       response.getWriter().write(user + ", salut!");
 
     }
 
